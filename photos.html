@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fef9c3;
+    text-align: center;
+    padding: 40px;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    margin: 8px;
+    padding: 8px 15px;
+    background-color: #ca8a04;
+    color: white;
+    border-radius: 6px;
+}
+
+#gallery img {
+    border-radius: 10px;
+    margin: 10px;
+}
+
+#gallery p {
+    font-weight: bold;
+}
+</style>
+    <title>Class Photos</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.3.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2025.3.1/core.js"></script>
+</head>
+
+<body style="font-family:Segoe UI; text-align:center; background-color:lightblue; padding:40px;">
+
+    <h1>📸 10-Sapphire Activities</h1>
+
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="classmates.html">Classmates</a> |
+        <a href="attendance.html">Attendance</a>
+    </nav>
+
+    <br>
+
+    <div id="gallery"></div>
+
+    <py-script src="photos.py"></py-script>
+</body>
+</html>

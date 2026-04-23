@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Attendance Tracker</title>
+
+    <py-config>
+        packages = ['numpy', 'matplotlib']
+    </py-config>
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.3.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2025.3.1/core.js"></script>
+</head>
+
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #e0f2fe;
+    text-align: center;
+    padding: 40px;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    margin: 8px;
+    padding: 8px 15px;
+    background-color: #0369a1;
+    color: white;
+    border-radius: 6px;
+}
+
+select, input {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 6px;
+    border: 1px solid gray;
+}
+
+input[type="button"] {
+    background-color: #0284c7;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background-color: #0369a1;
+}
+
+#output {
+    margin-top: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+</style>
+
+<body>
+    <h1>📊 Attendance Tracker: 10-Sapphire</h1>
+
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="classmates.html">Classmates</a>
+        <a href="photos.html">Photos</a>
+    </nav>
+
+    <br>
+
+    <select id="day">
+        <option value="0">Monday</option>
+        <option value="1">Tuesday</option>
+        <option value="2">Wednesday</option>
+        <option value="3">Thursday</option>
+        <option value="4">Friday</option>
+    </select>
+
+    <input type="number" id="absences" placeholder="Absences"><br><br>
+
+    <input type="button" py-click="generate_graph" value="Submit">
+    <input type="button" py-click="reset_graph" value="Reset">
+
+    <div id="output"></div>
+
+    <py-script src="attendance.py"></py-script>
+</body>
+</html>

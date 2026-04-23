@@ -1,0 +1,83 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classmates</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.3.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2025.3.1/core.js"></script>
+</head>
+
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #dbeafe;
+    text-align: center;
+    padding: 40px;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    margin: 8px;
+    padding: 8px 15px;
+    background-color: #1e3a8a;
+    color: white;
+    border-radius: 6px;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 6px;
+    border: 1px solid gray;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+#output {
+    margin-top: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+</style>
+
+<body>
+    <h1>Meet your Classmates</h1>
+
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="attendance.html">Attendance</a> |
+        <a href="photos.html">Photos</a>
+    </nav>
+
+    <br><br>
+
+    <input type="text" id="name" placeholder="Enter Name"><br>
+    <input type="text" id="section" placeholder="Enter Section"><br>
+    <input type="text" id="subject" placeholder="Favorite Subject"><br><br>
+
+    <button py-click="add_classmate">Add Classmate</button><br><br>
+    <button py-click="show_list">See Classmates</button>
+
+    <div id="output"></div>
+
+    <py-script src="seatwork2.py"></py-script>
+</body>
+</html>
