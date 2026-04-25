@@ -1,10 +1,16 @@
-from pyscript import display
+from pyscript import display, HTML
 
 images = [
-    ("images/activity1.jpg", "Class Presentation Day"),
-    ("images/activity2.jpg", "ICT Coding Session"),
-    ("images/activity3.jpg", "Group Project Work")
+    ("Intrams.jpg", "Intramurals Upper Division"),
+    ("Xmas.jpg", "Yearly Christmas Party"),
+    ("Last Day.jpg", "Goodbyes"),
+    ("Minimart.jpg", "Minimart Fair")
 ]
 
 for img, caption in images:
-    display(f"<img src='{img}' width='300'><br><p>{caption}</p><br>", target="gallery")
+    display(HTML(f"""
+        <div class='photo'>
+        <img src='{img}'>
+        <p>{caption}</p>
+        </div>
+    """), target="gallery")

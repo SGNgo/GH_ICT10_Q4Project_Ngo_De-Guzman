@@ -1,51 +1,129 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
-    <title>10-Sapphire Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classmates Page</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.3.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2025.3.1/core.js"></script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: whitesmoke;
+            margin: 0;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 5px;
+        }
+
+        p {
+            color: black;
+        }
+
+        /* NAVBAR (UPDATED) */
+        nav {
+            background: #1e40af;
+            padding: 12px 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        
+        nav a::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background: white;
+            left: 0;
+            bottom: -4px;
+            transition: 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .card {
+            background: white;
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1e40af;
+        }
+
+        #output {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f9fafb;
+            border-radius: 8px;
+            text-align: left;
+        }
+    </style>
 </head>
 
-<style>
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #74ebd5, #ACB6E5);
-    text-align: center;
-    padding: 60px;
-    margin: 0;
-}
-
-h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 18px;
-}
-
-nav a {
-    text-decoration: none;
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: navy;
-    color: white;
-    border-radius: 8px;
-}
-
-nav a:hover {
-    background-color: darkblue;
-}
-</style>
-
-<body style="font-family:Segoe UI; text-align:center; background-color:lightblue; padding:40px;">
-    
-    <h1>Welcome to 10-Sapphire Website</h1>
-    <p>By Seth Ngo</p>
+<body>
+    <h1>Meet your Classmates</h1>
+    <p>Welcome to 10-Sapphire!</p>
 
     <nav>
-        <a href="classmates.html">Classmates</a> |
-        <a href="attendance.html">Attendance Tracker</a> |
-        <a href="photos.html">Class Photos</a>
+        <a href="index.html">Classmates</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="photos.html">Photos</a>
     </nav>
 
+    <div class="card">
+        <h2>Register</h2>
+
+        <input type="text" id="name" placeholder="Enter Name">
+        <input type="text" id="section" placeholder="Enter Section">
+        <input type="text" id="subject" placeholder="Favorite Subject">
+
+        <button py-click="add_classmate">Add</button>
+        <button py-click="show_list">View List</button>
+
+        <div id="output"></div>
+    </div>
+
+    <py-script src="main.py"></py-script>
 </body>
 </html>

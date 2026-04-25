@@ -1,6 +1,8 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attendance Tracker</title>
 
     <py-config>
@@ -9,81 +11,151 @@
 
     <link rel="stylesheet" href="https://pyscript.net/releases/2025.3.1/core.css">
     <script type="module" src="https://pyscript.net/releases/2025.3.1/core.js"></script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: whitesmoke;
+            margin: 0;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 5px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        nav {
+            background: #1e40af;
+            padding: 12px 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background: white;
+            left: 0;
+            bottom: -4px;
+            transition: 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        /* GRAPH BOX */
+        .graph-box {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            min-width: 350px;
+        }
+
+        .card {
+            background: white;
+            width: 320px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        select, input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="button"] {
+            flex: 1;
+            padding: 10px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #1e40af;
+        }
+
+        #output {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 
-<style>
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #e0f2fe;
-    text-align: center;
-    padding: 40px;
-    margin: 0;
-}
-
-h1 {
-    margin-bottom: 15px;
-}
-
-nav a {
-    text-decoration: none;
-    margin: 8px;
-    padding: 8px 15px;
-    background-color: #0369a1;
-    color: white;
-    border-radius: 6px;
-}
-
-select, input {
-    padding: 10px;
-    margin: 5px;
-    border-radius: 6px;
-    border: 1px solid gray;
-}
-
-input[type="button"] {
-    background-color: #0284c7;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-input[type="button"]:hover {
-    background-color: #0369a1;
-}
-
-#output {
-    margin-top: 20px;
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-}
-</style>
-
 <body>
-    <h1>📊 Attendance Tracker: 10-Sapphire</h1>
+    <h1>Attendance Tracker</h1>
+    <p>Let us know when you're here!</p>
 
     <nav>
-        <a href="index.html">Home</a> |
-        <a href="classmates.html">Classmates</a>
+        <a href="index.html">Classmates</a>
+        <a href="attendance.html">Attendance</a>
         <a href="photos.html">Photos</a>
     </nav>
 
-    <br>
+    <div class="main">
 
-    <select id="day">
-        <option value="0">Monday</option>
-        <option value="1">Tuesday</option>
-        <option value="2">Wednesday</option>
-        <option value="3">Thursday</option>
-        <option value="4">Friday</option>
-    </select>
+        <div class="graph-box">
+            <h3>Weekly Absences</h3>
+            <div id="output"></div>
+        </div>
 
-    <input type="number" id="absences" placeholder="Absences"><br><br>
+        <div class="card">
+            <h2>Mark Attendance</h2>
 
-    <input type="button" py-click="generate_graph" value="Submit">
-    <input type="button" py-click="reset_graph" value="Reset">
+            <select id="day">
+                <option value="0">Monday</option>
+                <option value="1">Tuesday</option>
+                <option value="2">Wednesday</option>
+                <option value="3">Thursday</option>
+                <option value="4">Friday</option>
+            </select>
 
-    <div id="output"></div>
+            <input type="number" id="absences" placeholder="Absences">
+
+            <div class="btn-group">
+                <input type="button" py-click="generate_graph" value="Submit">
+                <input type="button" py-click="reset_graph" value="Reset">
+            </div>
+        </div>
+    </div>
 
     <py-script src="attendance.py"></py-script>
 </body>
