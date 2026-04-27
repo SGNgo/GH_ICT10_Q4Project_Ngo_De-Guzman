@@ -2,10 +2,10 @@ from pyscript import display, HTML  # HTML allows formatted display
 
 # images and captions
 images = [
-    ("Intrams.jpg", "Intramurals Upper Division"),
-    ("Xmas.jpg", "Yearly Christmas Party"),
-    ("Last Day.jpg", "Goodbyes"),
-    ("Minimart.jpg", "Minimart Fair")
+    ("Intrams.JPG", "Intramurals Upper Division"),
+    ("Xmas.JPG", "Yearly Christmas Party"),
+    ("Last Day.JPG", "Goodbyes"),
+    ("Minimart.JPG", "Minimart Fair")
 ]
 
 # loop through each image
