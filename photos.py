@@ -1,5 +1,6 @@
-from pyscript import display, HTML
+from pyscript import display, HTML  # HTML allows formatted display
 
+# images and captions
 images = [
     ("Intrams.jpg", "Intramurals Upper Division"),
     ("Xmas.jpg", "Yearly Christmas Party"),
@@ -7,10 +8,11 @@ images = [
     ("Minimart.jpg", "Minimart Fair")
 ]
 
+# loop through each image
 for img, caption in images:
     display(HTML(f"""
         <div class='photo'>
         <img src='{img}'>
         <p>{caption}</p>
         </div>
-    """), target="gallery")
+"""), target="gallery")
